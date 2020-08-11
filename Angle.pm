@@ -40,13 +40,13 @@ sub new {
 sub angle2zodiac {
 	my ($self, $angle) = @_;
 
-	my $angle_degree = int($angle);
-	$angle -= $angle_degree;
+	my $full_angle_degree = int($angle);
+	$angle -= $full_angle_degree;
 	$angle *= 60;
 	my $angle_minute = int($angle);
-	my $sign = int($angle_degree / 30);
+	my $sign = int($full_angle_degree / 30);
 
-	my $zodiac_angle = $angle_degree.decode_utf8('°').
+	my $zodiac_angle = $full_angle_degree.decode_utf8('°').
 		$ZODIAC{$sign + 1}.$angle_minute.decode_utf8("′");
 
 	return $zodiac_angle;

@@ -1,4 +1,5 @@
 0.02
+ - Rename variable $angle_degree to better name $full_angle_degree.
 
 0.01 2020-08-11T14:26:20+02:00
  - First version.
