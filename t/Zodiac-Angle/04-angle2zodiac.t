@@ -8,9 +8,9 @@ use Zodiac::Angle;
 
 # Test.
 my $obj = Zodiac::Angle->new;
-my $ret = $obj->angle2zodiac(0.5);
-is($ret, decode_utf8("0°♈30′"), 'Convert 0.5.');
+my $ret = $obj->angle2zodiac(1.5);
+is($ret, decode_utf8("1°♈30′"), 'Convert 1.5.');
 
 # Test.
-$ret = $obj->angle2zodiac(30.5);
-is($ret, decode_utf8("30°♉30′"), 'Convert 30.5.');
+$ret = $obj->angle2zodiac(31.5);
+is($ret, decode_utf8("1°♉30′"), 'Convert 31.5.');

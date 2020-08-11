@@ -45,8 +45,9 @@ sub angle2zodiac {
 	$angle *= 60;
 	my $angle_minute = int($angle);
 	my $sign = int($full_angle_degree / 30);
+	my $angle_degree = $full_angle_degree - ($sign * 30);
 
-	my $zodiac_angle = $full_angle_degree.decode_utf8('°').
+	my $zodiac_angle = $angle_degree.decode_utf8('°').
 		$ZODIAC{$sign + 1}.$angle_minute.decode_utf8("′");
 
 	return $zodiac_angle;
