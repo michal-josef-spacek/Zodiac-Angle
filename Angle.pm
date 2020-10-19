@@ -41,9 +41,17 @@ sub angle2zodiac {
 	my ($self, $angle, $opts_hr) = @_;
 
 	# Options.
-	if (! defined $opts_hr) {
+	if (! defined $opts_hr || ! exists $opts_hr->{'minute'}) {
 		$opts_hr->{'minute'} = 1;
 	}
+	if (! exists $opts_hr->{'second'}) {
+		$opts_hr->{'second'} = 0;
+	}
+	if (! exists $opts_hr->{'second_round'}) {
+		$opts_hr->{'second_round'} = 4;
+	}
+
+	my $ret = {};
 
 	# Full angle degree.
 	my $full_angle_degree = int($angle);
@@ -51,18 +59,31 @@ sub angle2zodiac {
 	$angle *= 60;
 
 	# Angle minute.
-	my $angle_minute = int($angle);
+	if ($opts_hr->{'minute'}) {
+		$ret->{'angle_minute'} = int($angle);
+		$angle -= $ret->{'angle_minute'};
+		$angle *= 60;
+	}
+
+	# Angle second.
+	if ($opts_hr->{'second'}) {
+		my $print_format = '%0.'.$opts_hr->{'second_round'}.'f';
+		$ret->{'angle_second'} = sprintf($print_format, $angle);
+	}
 
 	# Angle sign.
-	my $sign = int($full_angle_degree / 30);
+	$ret->{'sign'} = int($full_angle_degree / 30);
 
 	# Angle degree in sign.
-	my $angle_degree = $full_angle_degree - ($sign * 30);
+	$ret->{'angle_degree'} = $full_angle_degree - ($ret->{'sign'} * 30);
 
 	# Output.
-	my $zodiac_angle = $angle_degree.decode_utf8('°').$ZODIAC{$sign + 1};
-	if (exists $opts_hr->{'minute'} && $opts_hr->{'minute'}) {
-		$zodiac_angle .= $angle_minute.decode_utf8("′");
+	my $zodiac_angle = $ret->{'angle_degree'}.decode_utf8('°').$ZODIAC{$ret->{'sign'} + 1};
+	if ($opts_hr->{'minute'}) {
+		$zodiac_angle .= $ret->{'angle_minute'}.decode_utf8("′");
+	}
+	if ($opts_hr->{'second'}) {
+		$zodiac_angle .= $ret->{'angle_second'}.decode_utf8("′′");
 	}
 
 	return $zodiac_angle;
@@ -114,7 +135,8 @@ Returns instance of 'Zodiac::Angle'.
 Convert angle to Zodiac angle.
 
 Options defined C<$opts_hr> control output. Possible keys in reference to hash
-are: minute (0/1 print minutes).
+are: minute (0/1 print minutes), second (0/1 print second), second_round (number
+of round numbers, default 4).
 
 Default value of C<$opts_hr> is { minute => 1 }.
 
@@ -195,6 +217,40 @@ Returns angle.
  # Output with '0.5' argument:
  # Angle: 0.5
  # Zodiac angle: 0°♈
+
+=head1 EXAMPLE3
+
+ use strict;
+ use warnings;
+
+ use Zodiac::Angle;
+ use Unicode::UTF8 qw(encode_utf8);
+
+ # Object.
+ my $obj = Zodiac::Angle->new;
+
+ if (@ARGV < 1) {
+         print STDERR "Usage: $0 angle\n";
+         exit 1;
+ }
+ my $angle = $ARGV[0];
+
+ my $zodiac_angle = Zodiac::Angle->new->angle2zodiac($angle, {
+         'minute' => 1,
+         'second' => 1,
+         'second_round' => 4,
+ });
+
+ # Print out.
+ print 'Angle: '.$angle."\n";
+ print 'Zodiac angle: '.encode_utf8($zodiac_angle)."\n";
+
+ # Output without arguments:
+ # Usage: __SCRIPT__ angle
+
+ # Output with '0.5' argument:
+ # Angle: 0.5
+ # Zodiac angle: 0°♈30′0.0000′′
 
 =head1 DEPENDENCIES
 
