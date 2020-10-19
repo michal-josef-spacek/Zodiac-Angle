@@ -44,11 +44,19 @@ sub angle2zodiac {
 	if (! defined $opts_hr) {
 		$opts_hr->{'minute'} = 1;
 	}
+
+	# Full angle degree.
 	my $full_angle_degree = int($angle);
 	$angle -= $full_angle_degree;
 	$angle *= 60;
+
+	# Angle minute.
 	my $angle_minute = int($angle);
+
+	# Angle sign.
 	my $sign = int($full_angle_degree / 30);
+
+	# Angle degree in sign.
 	my $angle_degree = $full_angle_degree - ($sign * 30);
 
 	# Output.
