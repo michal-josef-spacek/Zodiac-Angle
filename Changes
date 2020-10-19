@@ -1,5 +1,6 @@
 0.03
  - Add all signs to test of angle2zodiac().
+ - Add options for angle2zodiac() output.
  - Add stub of zodiac2angle() test.
 
 0.02 2020-08-11T23:20:44+02:00
