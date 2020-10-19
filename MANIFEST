@@ -22,5 +22,6 @@ t/Zodiac-Angle/01-use.t
 t/Zodiac-Angle/02-version.t
 t/Zodiac-Angle/03-new.t
 t/Zodiac-Angle/04-angle2zodiac.t
+t/Zodiac-Angle/05-zodiac2angle.t
 xt/Zodiac-Angle/01-pod_coverage.t
 xt/Zodiac-Angle/02-pod.t

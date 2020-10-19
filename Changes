@@ -1,4 +1,5 @@
 0.03
+ - Add stub of zodiac2angle() test.
 
 0.02 2020-08-11T23:20:44+02:00
  - Fix computation and improve example to 1 degree of zodiac.
