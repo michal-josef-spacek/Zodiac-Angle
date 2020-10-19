@@ -8,18 +8,18 @@ use Readonly;
 use Unicode::UTF8 qw(decode_utf8);
 
 Readonly::Hash our %ZODIAC => (
-	1 => decode_utf8('♈'),
-	2 => decode_utf8('♉'),
-	3 => decode_utf8('♊'),
-	4 => decode_utf8('♋'),
-	5 => decode_utf8('♌'),
-	6 => decode_utf8('♍'),
-	7 => decode_utf8('♎'),
-	8 => decode_utf8('♏'),
-	9 => decode_utf8('♐'),
-	10 => decode_utf8('♑'),
-	11 => decode_utf8('♒'),
-	12 => decode_utf8('♓'),
+	1 => decode_utf8('♈'), # Aries/Beran
+	2 => decode_utf8('♉'), # Taurus/Býk
+	3 => decode_utf8('♊'), # Gemini/Blíženci
+	4 => decode_utf8('♋'), # Cancer/Rak
+	5 => decode_utf8('♌'), # Leo/Lev
+	6 => decode_utf8('♍'), # Virgo/Panna
+	7 => decode_utf8('♎'), # Libra/Váhy
+	8 => decode_utf8('♏'), # Scorpio/Štír
+	9 => decode_utf8('♐'), # Sagittarius/Střelec
+	10 => decode_utf8('♑'), # Capricorn/Kozoroh
+	11 => decode_utf8('♒'), # Aquarius/Vodnář
+	12 => decode_utf8('♓'), # Pisces/Ryby
 );
 
 our $VERSION = 0.03;
