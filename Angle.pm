@@ -365,6 +365,14 @@ L<Unicode::UTF8>.
 
 =over
 
+=item L<angle2zodiac>
+
+Script to convert angle to zodiac string.
+
+=item L<App::Angle2Zodiac>
+
+Base class for angle2zodiac script.
+
 =item L<Zodiac::Angle::SwissEph>
 
 Class for zodiac_angle manipulation based on SwissEph.
