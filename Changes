@@ -1,4 +1,4 @@
-0.03
+0.03 2020-10-20T11:19:23+02:00
  - Add 'ascii' option for angle2zodiac().
  - Add 'second' and 'second_round' options for angle2zodiac().
  - Add all signs to test of angle2zodiac().
