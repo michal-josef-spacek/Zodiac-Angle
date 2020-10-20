@@ -25,7 +25,7 @@ Readonly::Hash our %ZODIAC => (
 	},
 	4 => {
 		'sign' => decode_utf8('♋'), # Cancer/Rak
-		'ascii' => 'ca',
+		'ascii' => 'cn',
 	},
 	5 => {
 		'sign' => decode_utf8('♌'), # Leo/Lev
@@ -49,7 +49,7 @@ Readonly::Hash our %ZODIAC => (
 	},
 	10 => {
 		'sign' => decode_utf8('♑'), # Capricorn/Kozoroh
-		'ascii' => 'ca',
+		'ascii' => 'cp',
 	},
 	11 => {
 		'sign' => decode_utf8('♒'), # Aquarius/Vodnář
