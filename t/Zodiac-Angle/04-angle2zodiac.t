@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 'tests' => 16;
+use Test::More 'tests' => 17;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Zodiac::Angle;
@@ -76,3 +76,12 @@ $ret = $obj->angle2zodiac(237.8066919028, {
 });
 is($ret, decode_utf8("27°♏"),
 	'Convert value of 237.8066919028 to output with degrees only.');
+
+# Test.
+$ret = $obj->angle2zodiac(237.8066919028, {
+	'minute' => 1,
+	'second' => 1,
+	'sign_type' => 'ascii',
+});
+is($ret, decode_utf8("27 sc 48'24.0909''"),
+	'Convert value of 237.8066919028 to output with minute and seconds (ascii output).');

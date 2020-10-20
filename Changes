@@ -1,4 +1,5 @@
 0.03
+ - Add 'ascii' option for angle2zodiac().
  - Add 'second' and 'second_round' options for angle2zodiac().
  - Add all signs to test of angle2zodiac().
  - Add options for angle2zodiac() output.

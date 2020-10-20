@@ -3,10 +3,12 @@ TODO
 2. Implementovat zodiac2angle()
 3. Prejmenovat? Ve skutecnosti je to position_of_planet_in_zodiac?
 4. Pridat option 'short' do angle2zodiac(), kdyz prevedu 0.5, tak nepotrebuji 0.0000'' ale staci bez toho. 
-5. Pridat option 'ascii' do angle2zodiac().
 6.
 
 Applied
 =======
 1. Do testu pridat kazde znameni zverokruhu.
 OK [20201019] skim
+
+5. Pridat option 'ascii' do angle2zodiac().
+OK [20201020] skim
