@@ -1,7 +1,9 @@
 use strict;
 use warnings;
 
-use Test::More 'tests' => 17;
+use English;
+use Error::Pure::Utils qw(clean);
+use Test::More 'tests' => 18;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Zodiac::Angle;
@@ -85,3 +87,13 @@ $ret = $obj->angle2zodiac(237.8066919028, {
 });
 is($ret, decode_utf8("27 sc 48'24.0909''"),
 	'Convert value of 237.8066919028 to output with minute and seconds (ascii output).');
+
+# Test.
+eval {
+	$obj->angle2zodiac(237.8066919028, {
+		'sign_type' => 'foo',
+	});
+};
+is($EVAL_ERROR, "Parameter 'sign_type' is bad. Possible values are 'sign' and 'ascii'.\n",
+	"Parameter 'sign_type' is bad.");
+clean();
