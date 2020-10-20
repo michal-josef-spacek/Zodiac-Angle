@@ -1,4 +1,4 @@
-0.04
+0.04 2020-10-20T11:33:17+02:00
  - Add test for error in angle2zodiac().
  - Change bugtracker to github.
  - Fix zodiac shortcuts.
