@@ -224,6 +224,8 @@ Returns angle.
 
 =head1 EXAMPLE1
 
+=for comment filename=angle_to_zodiac.pl
+
  use strict;
  use warnings;
 
@@ -253,6 +255,8 @@ Returns angle.
  # Zodiac angle: 0°♈30′
 
 =head1 EXAMPLE2
+
+=for comment filename=angle_to_zodiac_only_minute.pl
 
  use strict;
  use warnings;
@@ -285,6 +289,8 @@ Returns angle.
  # Zodiac angle: 0°♈
 
 =head1 EXAMPLE3
+
+=for comment filename=angle_to_zodiac_explicit_second_with_round.pl
 
  use strict;
  use warnings;
@@ -319,6 +325,8 @@ Returns angle.
  # Zodiac angle: 0°♈30′0.0000′′
 
 =head1 EXAMPLE4
+
+=for comment filename=angle_to_zodiac_ascii_output.pl
 
  use strict;
  use warnings;
