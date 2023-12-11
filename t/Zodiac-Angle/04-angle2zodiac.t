@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 19;
+use Test::More 'tests' => 21;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Zodiac::Angle;
@@ -97,6 +97,23 @@ $ret = $obj->angle2zodiac(237.8066919028, {
 });
 is($ret, decode_utf8("27 sc 48'24.09''"),
 	'Convert value of 237.8066919028 to output with minute and seconds rounded to 2 decimals (ascii output).');
+
+# Test.
+$ret = $obj->angle2zodiac(237.8066919028, {
+	'minute' => 1,
+	'second' => 0,
+	'sign_type' => 'ascii',
+});
+is($ret, decode_utf8("27 sc 48'"),
+	'Convert value of 237.8066919028 to output with minute (ascii output).');
+
+# Test.
+$ret = $obj->angle2zodiac(237.8066919028, {
+	'minute' => 0,
+	'sign_type' => 'ascii',
+});
+is($ret, decode_utf8("27 sc"),
+	'Convert value of 237.8066919028 to output without minute and seconds (ascii output).');
 
 # Test.
 eval {

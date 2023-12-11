@@ -1,5 +1,6 @@
 0.06
  - Add test for 'second_round'.
+ - Add tests for ascii output without seconds and minutes.
  - Rewrite from List::MoreUtils to List::Util.
  - Update Module::Install to 1.21 version.
  - Update copyright years.
