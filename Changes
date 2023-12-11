@@ -1,4 +1,5 @@
 0.06
+ - Rewrite from List::MoreUtils to List::Util.
 
 0.05 2022-09-10T12:28:17+02:00
  - Add angle2zodiac to SEE ALSO section in doc.

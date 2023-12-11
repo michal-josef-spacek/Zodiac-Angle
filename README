@@ -173,7 +173,7 @@ EXAMPLE4
      # Zodiac angle: 0° ar 30'0.0000''
 
 DEPENDENCIES
-    Class::Utils, Error::Pure, List::MoreUtils, Readonly, Unicode::UTF8.
+    Class::Utils, Error::Pure, List::Util, Readonly, Unicode::UTF8.
 
 SEE ALSO
     angle2zodiac

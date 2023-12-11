@@ -5,7 +5,7 @@ use warnings;
 
 use Class::Utils qw(set_params);
 use Error::Pure qw(err);
-use List::MoreUtils qw(none);
+use List::Util 1.33 qw(none);
 use Readonly;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -365,7 +365,7 @@ Returns angle.
 
 L<Class::Utils>,
 L<Error::Pure>,
-L<List::MoreUtils>,
+L<List::Util>,
 L<Readonly>,
 L<Unicode::UTF8>.
 
