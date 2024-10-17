@@ -9,7 +9,7 @@ use List::Util 1.33 qw(none);
 use Readonly;
 use Unicode::UTF8 qw(decode_utf8);
 
-Readonly::Array our @SIGN_TYPES => qw(sign ascii);
+Readonly::Array our @SIGN_TYPES => qw(ascii sign);
 Readonly::Hash our %ZODIAC => (
 	1 => {
 		'sign' => decode_utf8('♈'), # Aries/Beran
