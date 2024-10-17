@@ -75,7 +75,7 @@ Readonly::Hash our %ZODIAC => (
 Readonly::Scalar our $SPACE => ' ';
 Readonly::Scalar our $SEP => '|';
 
-our $VERSION = 0.07;
+our $VERSION = 0.08;
 
 # Constructor.
 sub new {
@@ -467,6 +467,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.07
+0.08
 
 =cut
