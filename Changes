@@ -1,5 +1,6 @@
 0.07
  - Add 'struct' output to angle2zodiac().
+ - Add default values to angle2zodiac() doc.
 
 0.06 2024-10-17T10:18:26+02:00
  - Add test for 'second_round'.

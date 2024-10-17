@@ -222,8 +222,9 @@ Returns instance of 'Zodiac::Angle'.
 Convert angle to Zodiac angle.
 
 Options defined C<$opts_hr> control output. Possible keys in reference to hash
-are: minute (0/1 print minutes), second (0/1 print second), second_round (number
-of round numbers, default 4), sign_type (sign, ascii and struct, default sign).
+are: minute (0/1 print minutes, default 1), second (0/1 print second, default 0),
+second_round (number of round numbers, default 4), sign_type (sign, ascii and
+struct, default sign).
 
 Default value of C<$opts_hr> is { minute => 1 }.
 
