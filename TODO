@@ -3,7 +3,8 @@ TODO
 2. Implementovat zodiac2angle()
 3. Prejmenovat? Ve skutecnosti je to position_of_planet_in_zodiac?
 4. Pridat option 'short' do angle2zodiac(), kdyz prevedu 0.5, tak nepotrebuji 0.0000'' ale staci bez toho. 
-6.
+6. Vylepsit testy pro angle2zodiac().
+7.
 
 Applied
 =======
