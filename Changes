@@ -1,4 +1,4 @@
-0.06
+0.06 2024-10-17T10:18:26+02:00
  - Add test for 'second_round'.
  - Add tests for ascii output without seconds and minutes.
  - Rewrite from List::MoreUtils to List::Util.
